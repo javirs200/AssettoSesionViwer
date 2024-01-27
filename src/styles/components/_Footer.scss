@@ -1,0 +1,12 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.miFooter {
+    background-color: $red;
+    display: flex;
+    justify-content: flex-end;
+}
+
+h3{
+    margin-right: 5%;
+}

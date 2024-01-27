@@ -1,0 +1,24 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.detailCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    border-radius: 10px;
+    border: solid 5px $gold;
+    background: rgb(45, 159, 184);
+    background: linear-gradient(162deg, rgba(45, 159, 184, 1) 0%, rgba(129, 136, 86, 1) 30%, rgba(45, 159, 184, 1) 65%, rgba(129, 136, 86, 1) 100%);
+}
+
+.about , .abilities ,.stats {
+    border-radius: 5%;
+    border: solid 2px $gray;
+}
+
+.about , .abilities{
+    padding: 2%;
+}
