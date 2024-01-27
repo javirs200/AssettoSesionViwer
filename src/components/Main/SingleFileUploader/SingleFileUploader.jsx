@@ -12,18 +12,15 @@ const SingleFileUploader = () => {
 
   const handleDrop = (e) => {
     e.preventDefault()
-    console.log("droped e ->",e);
+    const [item] = e.dataTransfer.items;
+    console.log(item.getAsFile());
   }
 
   return (
     <>
       <div className="SingleFileUploader">
-        <label htmlFor="file" className="sr-only">
-          Choose a file
-        </label>
-        <input id="file" type="file" onChange={handleFileChange} />
+        <input className="dropAerea" id="file" type="file" onChange={handleFileChange} onDrop={handleDrop}/>
       </div>
-      <div className="dropAerea" onDrop={handleDrop}></div>
       {file && (
         <section>
           File details:
