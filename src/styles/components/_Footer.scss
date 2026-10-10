@@ -1,12 +1,29 @@
 @import '../utils/variables.scss';
-@import '../utils/mixins.scss';
 
 .miFooter {
-    background-color: $red;
+    width: min(100% - 48px, 1000px);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid #303238;
+    color: #6f737b;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
 }
 
-h3{
-    margin-right: 5%;
+.miFooter b {
+    padding: 0 4px;
+    color: $red;
+}
+
+@media (max-width: 600px) {
+    .miFooter {
+        width: min(100% - 32px, 1000px);
+        flex-direction: column;
+        gap: 7px;
+        font-size: 8px;
+    }
 }

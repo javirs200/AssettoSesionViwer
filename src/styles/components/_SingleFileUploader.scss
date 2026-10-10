@@ -1,3 +1,237 @@
+.session-panel {
+    overflow: hidden;
+    border: 1px solid #34373e;
+    border-radius: 8px;
+    background: #202226;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+    text-align: left;
+}
+
+.panel-heading {
+    min-height: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid #34373e;
+    background: #24262b;
+}
+
+.panel-kicker {
+    justify-content: flex-start;
+    color: #969aa2;
+    font-size: 9px;
+    letter-spacing: 1.7px;
+}
+
+.panel-heading h2 {
+    margin: 5px 0 0;
+    color: #f1f2f4;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.drop-area {
+    position: relative;
+    display: grid;
+    min-height: 250px;
+    margin: 24px;
+    overflow: hidden;
+    place-items: center;
+    border: 1px dashed #555962;
+    border-radius: 6px;
+    background: #1c1e22;
+    transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.drop-area:hover,
+.drop-area.is-dragging {
+    border-color: #e5484d;
+    background: #242023;
+}
+
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.file-input:focus-visible + .drop-area-content {
+    outline: 2px solid #e5484d;
+    outline-offset: 5px;
+}
+
+.drop-area-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    color: #b5b8bf;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    margin-bottom: 15px;
+    place-items: center;
+    border: 1px solid #484b52;
+    border-radius: 50%;
+    color: #e5484d;
+    font-size: 23px;
+    line-height: 1;
+}
+
+.drop-area-content > strong {
+    color: #f1f2f4;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.drop-area-content > span:not(.upload-icon):not(.file-hint) {
+    margin-top: 7px;
+    color: #898e97;
+    font-size: 12px;
+}
+
+.browse-link {
+    color: #ef696e;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.file-hint {
+    margin-top: 25px;
+    color: #686d76;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+}
+
+.upload-error {
+    margin: -8px 24px 22px;
+    color: #ff888c;
+    font-size: 13px;
+}
+
+.reset-button {
+    padding: 9px 12px;
+    border: 1px solid #454850;
+    border-radius: 4px;
+    background: transparent;
+    color: #c4c6cb;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: border-color 160ms ease, color 160ms ease;
+}
+
+.reset-button:hover {
+    border-color: #e5484d;
+    color: #fff;
+}
+
+.results-content {
+    padding: 20px 24px 24px;
+}
+
+.session-summary {
+    display: flex;
+    gap: 34px;
+    margin-bottom: 20px;
+}
+
+.session-summary > div {
+    display: grid;
+    gap: 5px;
+}
+
+.session-summary span {
+    color: #818690;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.session-summary strong {
+    overflow: hidden;
+    color: #e6e7e9;
+    font-size: 13px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    border: 1px solid #363940;
+    border-radius: 5px;
+}
+
+.timeTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: #d9dadd;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.timeTable th,
+.timeTable td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #34373e;
+    text-align: left;
+}
+
+.timeTable thead th {
+    background: #292b30;
+    color: #a9adb5;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.timeTable tbody th {
+    color: #f0f1f2;
+    font-weight: 600;
+}
+
+.timeTable tbody tr:nth-child(even) {
+    background: #24262a;
+}
+
+.timeTable tbody tr:last-child th,
+.timeTable tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .panel-heading {
+        padding: 16px;
+    }
+
+    .drop-area {
+        min-height: 225px;
+        margin: 16px;
+    }
+
+    .results-content {
+        padding: 16px;
+    }
+
+    .session-summary {
+        flex-wrap: wrap;
+        gap: 18px 24px;
+    }
+}
 .dropAerea{
     padding: 5%;
     border: dashed 5px white ;

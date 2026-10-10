@@ -9,19 +9,30 @@ import CssBaseline from '@mui/material/CssBaseline';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    primary: {
+      main: '#e5484d',
+    },
+    background: {
+      default: '#17191c',
+      paper: '#22252a',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Segoe UI", sans-serif',
   },
 });
 
 function App() {
-
   return (
     <ThemeProvider theme={darkTheme}>
-    <CssBaseline />
+      <CssBaseline />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <Header />
-        <Main />
+        <div className="app-shell">
+          <Header />
+          <Main />
+          <Footer />
+        </div>
       </BrowserRouter>
-      <Footer />
     </ThemeProvider>
   )
 }

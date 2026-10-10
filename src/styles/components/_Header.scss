@@ -1,6 +1,91 @@
 @import '../utils/variables.scss';
-@import '../utils/mixins.scss';
 
-:root{
-    background-color: $red;
+header {
+    width: 100%;
+    border-bottom: 1px solid #303238;
+    background: rgba(25, 27, 30, 0.94);
+}
+
+header nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.nav-bar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: $white;
+    text-align: left;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: $red;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    transform: skew(-7deg);
+}
+
+.brand-copy {
+    display: grid;
+    gap: 2px;
+}
+
+.brand-copy strong {
+    font-size: 12px;
+    letter-spacing: 1.6px;
+}
+
+.brand-copy > span,
+.nav-status {
+    color: #878b93;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-indicator,
+.eyebrow > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67be8d;
+    box-shadow: 0 0 10px rgba(103, 190, 141, 0.5);
+}
+
+@media (max-width: 600px) {
+    header nav {
+        padding: 0 20px;
+    }
+
+    .nav-bar {
+        min-height: 66px;
+    }
+
+    .nav-status {
+        font-size: 0;
+    }
 }

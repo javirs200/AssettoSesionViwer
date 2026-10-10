@@ -1,12 +1,10 @@
-import { BottomNavigation,BottomNavigationAction } from '@mui/material';
-import { Adb,Favorite } from '@mui/icons-material'
-
 const Footer = () => {
-  return (<>
-      <div className='miFooter'>
-        <h3>Made by Javi</h3>
-      </div>
-  </>);
+  return (
+    <footer className="miFooter">
+      <span>ASSETTO CORSA SESSION VIEWER</span>
+      <span>MADE FOR THE PADDOCK <b>·</b> BY JAVI</span>
+    </footer>
+  );
 };
 
 export default Footer;

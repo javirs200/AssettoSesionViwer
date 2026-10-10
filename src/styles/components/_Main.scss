@@ -1,6 +1,13 @@
 @import '../utils/variables.scss';
-@import '../utils/mixins.scss';
 
 .principal{
-    @include standard-component;
+    width: min(100% - 48px, 1000px);
+    margin: 0 auto;
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .principal {
+        width: min(100% - 32px, 1000px);
+    }
 }

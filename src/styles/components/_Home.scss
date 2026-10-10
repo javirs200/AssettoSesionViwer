@@ -1,14 +1,59 @@
 @import '../utils/variables.scss';
-@import '../utils/mixins.scss';
 
-.home{width: 100%;}
-
-img{
-    width: 100%;
+.home {
+    padding: 70px 0 88px;
 }
 
-@media screen and (min-width: 1000px) {
-    img{
-        width: 40%;
+.home-intro {
+    max-width: 650px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.eyebrow,
+.panel-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #a2a6ad;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.eyebrow > span {
+    width: 6px;
+    height: 6px;
+    background: $red;
+    box-shadow: 0 0 10px rgba($red, 0.6);
+}
+
+.home-intro h1 {
+    margin: 20px 0 12px;
+    color: #f5f5f6;
+    font-family: 'Barlow Condensed', 'Segoe UI', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    line-height: 0.94;
+    text-transform: uppercase;
+}
+
+.home-intro h1 span {
+    color: $red;
+}
+
+.home-intro p {
+    max-width: 490px;
+    margin: 19px auto 0;
+    color: #92969e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .home {
+        padding: 54px 0 64px;
     }
 }
