@@ -29,6 +29,10 @@ const SingleFileUploader = () => {
         const RaceObj = JSON.parse(await sesionfile.text());
         console.log('useEffect : ', RaceObj);
         setSesionObj(RaceObj)
+        if (RaceObj.sessions[0].laps.length === 0) {
+          setSesionObj(null)
+          return
+        }
         const mapedLapsByDriver = RaceObj.sessions[0].laps.reduce((mapedLaps, item) => {
           const group = (mapedLaps[item.car] || []);
           group.push(item);
@@ -54,7 +58,7 @@ const SingleFileUploader = () => {
 
       for (const l of laps) {
         const element = <td>
-          {toTimeTrack(l.time)}
+          {toTimeTrack(l)}
         </td>
         cols.push(element)
       }
@@ -65,7 +69,6 @@ const SingleFileUploader = () => {
 
     for (const key in sesionObj) {
       if (Object.hasOwnProperty.call(sesionObj, key)) {
-        
         const element =
           <tr>
             <td>
