@@ -6,6 +6,7 @@ const SingleFileUploader = () => {
   const [sesionfile, setSesionFile] = useState(null);
   const [sesionObj, setSesionObj] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isLoadingDemo, setIsLoadingDemo] = useState(false);
   const [error, setError] = useState('');
 
   const handleFileChange = (e) => {
@@ -27,6 +28,26 @@ const SingleFileUploader = () => {
     }
   }
 
+  const handleLoadDemo = async () => {
+    setIsLoadingDemo(true);
+    setError('');
+    try {
+      const response = await fetch(`${import.meta.env.BASE_URL}demo-session.json`);
+      if (!response.ok) {
+        throw new Error('The demo session could not be loaded. Please try again.');
+      }
+      const demoFile = new File([await response.text()], 'demo-session.json', {
+        type: 'application/json',
+      });
+      setSesionObj(null);
+      setSesionFile(demoFile);
+    } catch (loadError) {
+      setError(loadError.message || 'The demo session could not be loaded.');
+    } finally {
+      setIsLoadingDemo(false);
+    }
+  };
+
   useEffect(() => {
     async function fetchData() {
       if (sesionfile) {
@@ -41,9 +62,10 @@ const SingleFileUploader = () => {
             return;
           }
           const mapedLapsByDriver = laps.reduce((groupedLaps, lap) => {
-            const group = groupedLaps[lap.car] || [];
+            const driver = raceObj.players?.[lap.car]?.name || lap.car;
+            const group = groupedLaps[driver] || [];
             group.push(lap);
-            groupedLaps[lap.car] = group;
+            groupedLaps[driver] = group;
             return groupedLaps;
           }, {});
           setSesionObj(mapedLapsByDriver);
@@ -67,7 +89,7 @@ const SingleFileUploader = () => {
           <span className="panel-kicker">SESSION DATA</span>
           <h2>{sesionObj ? 'Lap time report' : 'Load a session'}</h2>
         </div>
-        {sesionObj && (
+        {sesionObj ? (
           <button className="reset-button" type="button" onClick={() => {
             setSesionObj(null);
             setSesionFile(null);
@@ -75,6 +97,24 @@ const SingleFileUploader = () => {
           }}>
             LOAD ANOTHER
           </button>
+        ) : (
+          <div className="panel-actions">
+            <button
+              className="reset-button demo-button"
+              type="button"
+              onClick={handleLoadDemo}
+              disabled={isLoadingDemo}
+            >
+              {isLoadingDemo ? 'LOADING DEMO...' : 'TRY DEMO'}
+            </button>
+            <a
+              className="download-demo"
+              href={`${import.meta.env.BASE_URL}demo-session.json`}
+              download="assetto-session-demo.json"
+            >
+              DOWNLOAD JSON
+            </a>
+          </div>
         )}
       </div>
 
@@ -132,6 +172,13 @@ const SingleFileUploader = () => {
             <span className="file-hint">JSON SESSION FILES · PROCESSED LOCALLY</span>
           </label>
         </div>
+      )}
+      {!sesionObj && (
+        <details className="file-location">
+          <summary>Where can I find my session files?</summary>
+          <p>In File Explorer, paste this path into the address bar:</p>
+          <code>%LOCALAPPDATA%\AcTools Content Manager\Progress\Sessions</code>
+        </details>
       )}
       {error && <p className="upload-error" role="alert">{error}</p>}
     </section>

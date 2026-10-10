@@ -5,7 +5,6 @@ const Main = () => {
 
   return (
     <div className="principal">
-      <link rel="stylesheet" href="https://justingolden.me/pokemon-types-css/types.min.css"></link>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<Navigate to={"/"} />} />

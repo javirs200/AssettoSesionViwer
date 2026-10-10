@@ -1,4 +1,4 @@
-@import '../utils/variables.scss';
+@use '../utils/variables' as vars;
 
 .home {
     padding: 70px 0 88px;
@@ -25,8 +25,8 @@
 .eyebrow > span {
     width: 6px;
     height: 6px;
-    background: $red;
-    box-shadow: 0 0 10px rgba($red, 0.6);
+    background: vars.$red;
+    box-shadow: 0 0 10px rgba(vars.$red, 0.6);
 }
 
 .home-intro h1 {
@@ -41,7 +41,7 @@
 }
 
 .home-intro h1 span {
-    color: $red;
+    color: vars.$red;
 }
 
 .home-intro p {

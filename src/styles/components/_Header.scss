@@ -1,4 +1,4 @@
-@import '../utils/variables.scss';
+@use '../utils/variables' as vars;
 
 header {
     width: 100%;
@@ -23,7 +23,7 @@ header nav {
     display: inline-flex;
     align-items: center;
     gap: 13px;
-    color: $white;
+    color: vars.$white;
     text-align: left;
     text-decoration: none;
 }
@@ -34,7 +34,7 @@ header nav {
     display: grid;
     place-items: center;
     border-radius: 5px;
-    background: $red;
+    background: vars.$red;
     color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;

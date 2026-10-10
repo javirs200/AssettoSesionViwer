@@ -1,0 +1,87 @@
+{
+  "number_of_sessions": 1,
+  "players": [
+    {
+      "name": "Demo Driver 01",
+      "car": "demo_gt_car_01"
+    },
+    {
+      "name": "Demo Driver 02",
+      "car": "demo_gt_car_02"
+    },
+    {
+      "name": "Demo Driver 03",
+      "car": "demo_gt_car_03"
+    }
+  ],
+  "sessions": [
+    {
+      "name": "Practice",
+      "laps": [
+        {
+          "lap": 0,
+          "car": 0,
+          "sectors": [31240, 34810, 36195],
+          "time": 102245,
+          "cuts": 0
+        },
+        {
+          "lap": 1,
+          "car": 0,
+          "sectors": [31088, 34672, 35994],
+          "time": 101754,
+          "cuts": 0
+        },
+        {
+          "lap": 2,
+          "car": 0,
+          "sectors": [30995, 34501, 35840],
+          "time": 101336,
+          "cuts": 0
+        },
+        {
+          "lap": 0,
+          "car": 1,
+          "sectors": [31620, 35055, 36412],
+          "time": 103087,
+          "cuts": 0
+        },
+        {
+          "lap": 1,
+          "car": 1,
+          "sectors": [31448, 34870, 36201],
+          "time": 102519,
+          "cuts": 0
+        },
+        {
+          "lap": 2,
+          "car": 1,
+          "sectors": [31331, 34752, 36098],
+          "time": 102181,
+          "cuts": 0
+        },
+        {
+          "lap": 0,
+          "car": 2,
+          "sectors": [32103, 35411, 36880],
+          "time": 104394,
+          "cuts": 0
+        },
+        {
+          "lap": 1,
+          "car": 2,
+          "sectors": [31892, 35288, 36704],
+          "time": 103884,
+          "cuts": 0
+        },
+        {
+          "lap": 2,
+          "car": 2,
+          "sectors": [31760, 35145, 36588],
+          "time": 103493,
+          "cuts": 0
+        }
+      ]
+    }
+  ]
+}

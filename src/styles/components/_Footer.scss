@@ -1,4 +1,4 @@
-@import '../utils/variables.scss';
+@use '../utils/variables' as vars;
 
 .miFooter {
     width: min(100% - 48px, 1000px);
@@ -16,7 +16,7 @@
 
 .miFooter b {
     padding: 0 4px;
-    color: $red;
+    color: vars.$red;
 }
 
 @media (max-width: 600px) {

@@ -1,18 +1,17 @@
-@import '../utils/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@use '../utils/variables' as vars;
 
 #root {
     min-height: 100vh;
-    color: $white;
+    color: vars.$white;
     background:
         radial-gradient(ellipse at 80% -10%, rgba(229, 72, 77, 0.09), transparent 42%),
-        $black;
-    font-family: $font;
+        vars.$black;
+    font-family: vars.$font;
 }
 
 body {
     min-width: 320px;
-    background: $black;
+    background: vars.$black;
 }
 
 .app-shell {

@@ -1,9 +1,6 @@
-@import './components/Header';
-@import './components/Nav';
-@import './components/Main';
-@import './components/Footer';
-@import './components/Home';
-@import './components/SingleFileUploader';
-
-
-@import './views/App.scss';
+@use './components/Header';
+@use './components/Main';
+@use './components/Footer';
+@use './components/Home';
+@use './components/SingleFileUploader';
+@use './views/App';
