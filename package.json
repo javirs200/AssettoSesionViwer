@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "start": "vite --host",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,16 +15,12 @@
     "@mui/material": "^5.14.19",
     "normalize.css": "^8.0.1",
     "react": "^19.3.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.3.0",
     "react-router-dom": "^7.18.4",
     "sass": "^1.69.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.1.2",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.4.4",
     "vite": "^8.3.6"
   }
 }
