@@ -19,3 +19,5 @@ Install dependencies with `npm ci`, start the development server with
 `npm run dev`, and create a production build with `npm run build`.
 
 Work in progress.
+
+Updated november 2026
